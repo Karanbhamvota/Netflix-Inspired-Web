@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+
+  <style>
+    
+
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: white;
+  background-color: black;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.backg {
+  background: url('BG.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+
+  opacity: 1;
+}
+
+.div {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  max-width: 100%;
+}
+
+.sign-in-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lang-select {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  border: 1px solid #080808;
+  border-radius: 4px;
+  padding: 8px 32px 8px 12px;
+  font-size: 1rem;
+  margin-left: auto;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.div1-content {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  top: 8%;
+  padding: 0 20px;
+
+}
+
+.div1-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.div1-content h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.div1-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-form input {
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  font-size: 1rem;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.email-form button {
+  background: #e50914;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+hr {
+  border:2px solid transparent;
+  height: 2px;
+  background-color: rgb(226, 59, 115);
+
+}
+
+.first {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 5%;
+  text-align: center;
+  gap: 20px;
+}
+
+.first div {
+  flex: 1 1 300px;
+  color: white;
+  font-size: 1.2rem;
+  font-size: 30px;
+}
+
+.image img {
+  width: 200%;
+  max-width: 600px;
+  height:auto;
+  left:430px;
+  position: relative;
+  z-index: 2;
+}
+
+.video video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+
+}
+
+@media (min-width: 600px) {
+  .email-form {
+    flex-direction: row;
+  }
+
+  .email-form input {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .div1-content h1 {
+    font-size: 2rem;
+  }
+
+  .div1-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .first {
+    flex-direction: column;
+
+  }
+
+  .video video {
+    max-width: 100%;
+  }
+}
+
+
+
+
+ 
+  </style>
+</head>
+<body>
+  <div class="backg">
+    <header class="header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="logo" />
+      <select class="lang-select">
+    <option value="en">English</option>
+    
+
+  </select>
+ 
+    </header>
+    <div class="div1-content">
+      <h1>Unlimited movies, TV shows, and more</h1>
+      <h2>Starts at ₹149. Cancel at any time.</h2>
+      <p>Ready to watch? Enter your email to create or restart your membership.</p>
+      <div class="email-form">
+  <input type="email" id="emailInput" placeholder=" Enter your Email " required />
+  <button class="button" onclick="handleGetStarted()">Get Started &gt;</button>
+</div>
+
+<script>
+  function handleGetStarted() {
+    const email = document.getElementById('emailInput').value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailPattern.test(email)) {
+      // Redirect to another page or perform desired action
+      window.location.href = 'netback.html';
+    } else {
+      alert('Please enter a valid email address.');
+    }
+  }
+</script>
+    </div>
+  </div>
+  <section>
+    <hr>
+    
+</section>
+
+  
+  <section class="first">
+   <div>
+    <span>Enjoy on your TV</span> <br>
+    <span>watch instantly from any device.Watch on smart TVs, PlayStation.</span>
+   </div>
+   <div class="image">
+    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV Image" /></div>
+   <div class="video">
+    <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" autoplay loop muted playsinline></video>
+  </div>
+  <nav>
+
+  </nav>
+
+  </section>
+</body>
+</html>
